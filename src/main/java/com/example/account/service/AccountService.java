@@ -20,7 +20,7 @@ import static com.example.account.type.AccountStatus.IN_USE;
 @RequiredArgsConstructor
 public class AccountService {
     private final AccountRepository accountRepository;
-    private final AccountUserRepository accountUserRepository
+    private final AccountUserRepository accountUserRepository;
     /**
      * 사용자가 있는지 조회
      * 계좌에 번호를 생성하고
