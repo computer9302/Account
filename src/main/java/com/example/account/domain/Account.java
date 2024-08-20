@@ -16,6 +16,7 @@ import java.time.LocalDateTime;
 @Builder
 @Entity
 @EntityListeners(AuditingEntityListener.class)
+// branch master -> main update test
 public class Account {
     @Id
     @GeneratedValue
