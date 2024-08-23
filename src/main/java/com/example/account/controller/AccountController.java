@@ -54,6 +54,7 @@ public class AccountController {
     }
 
     @GetMapping("/account")
+    // 계좌 확인 api 001
     public List<AccountInfo> getAccountsByUserId(
             @RequestParam("user_id") Long userId
     ){
