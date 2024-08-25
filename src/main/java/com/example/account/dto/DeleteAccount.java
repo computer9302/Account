@@ -21,7 +21,7 @@ public class DeleteAccount {
         private Long userId;
 
         @NotBlank
-        @Size(min = 10, max = 10)
+        @Min(0)
         private String accountNumber;
     }
 
