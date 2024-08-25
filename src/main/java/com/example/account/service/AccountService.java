@@ -96,7 +96,7 @@ public class AccountService {
         }
 
         if (account.getBalance() > 0) {
-            throw new AccountException(ErrorCode.BALACE_NOT_EMPTY);
+            throw new AccountException(ErrorCode.BALANCE_NOT_EMPTY);
         }
     }
 

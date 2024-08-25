@@ -227,7 +227,7 @@ class AccountServiceTest {
                 () -> accountService.deleteAccount(1L, "1234567890"));
 
         //then
-        assertEquals(ErrorCode.BALACE_NOT_EMPTY, exception.getErrorCode());
+        assertEquals(ErrorCode.BALANCE_NOT_EMPTY, exception.getErrorCode());
     }
 
     @Test
