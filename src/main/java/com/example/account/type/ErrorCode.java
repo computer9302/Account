@@ -6,6 +6,8 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public enum ErrorCode {
+
+    INTERNAL_SERVER_ERROR("내부 서버 오류입니다."),
     USER_NOT_FOUND("사용자가 없습니다."),
     INVALID_REQUEST("잘못된 요청입니다."),
     TRANSACTION_NOT_FOUND("해당 거래가 없습니다."),
@@ -20,5 +22,5 @@ public enum ErrorCode {
     MAX_ACCOUNT_PER_USER_10("사용자 최대 계좌는 10개입니다.")
     ;
 
-    private String description;
+    private final String description;
 }
