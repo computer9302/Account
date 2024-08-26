@@ -200,7 +200,7 @@ class TransactionServiceTest {
 
     @Test
     @DisplayName("실제 트랙잭션 저장 성공")
-    public void saveFailedUseTransaction(String accountNumber, Long amount) {
+    public void saveFailedUseTransaction() {
         //given
         AccountUser user = AccountUser.builder()
                 .name("Pobi").build();
