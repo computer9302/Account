@@ -28,11 +28,12 @@ public class TransactionController {
     @AccountLock
     public UseBalance.Response useBalance(
             @Valid @RequestBody UseBalance.Request request
-    ){
+    ) throws InterruptedException {
         try {
+            Thread.sleep(3000L);
             return UseBalance.Response.from(transactionService.useBalance(request.getUserId(),
                     request.getAccountNumber(), request.getAmount()));
-        }catch (AccountException e){
+        }catch (AccountException | InterruptedException e){
             log.error("Failed to use balance.");
 
             transactionService.saveFailedUseTransaction(

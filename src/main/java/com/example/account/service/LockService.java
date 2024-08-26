@@ -16,18 +16,20 @@ import java.util.concurrent.TimeUnit;
 public class LockService {
     private final RedissonClient redissonClient;
 
-    public void Lock(String accountNumber) {
+    public void lock(String accountNumber) {
         RLock lock = redissonClient.getLock(getLockKey(accountNumber));
         log.debug("Trying lock for accountNumber : {}", accountNumber);
 
         try {
             boolean isLock = lock.tryLock(1, 5, TimeUnit.SECONDS);
-            if(!isLock) {
+            if (!isLock) {
                 log.error("======Lock acquisition failed=====");
-                throw new  AccountException(ErrorCode.ACCOUNT_TRANSACTION_LOCK)
+                throw new AccountException(ErrorCode.ACCOUNT_TRANSACTION_LOCK);
             }
+        } catch (AccountException e){
+            throw e;
         } catch (Exception e) {
-            log.error("Redis lock failed");
+            log.error("Redis lock failed", e);
         }
     }
 
